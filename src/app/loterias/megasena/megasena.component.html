@@ -1,0 +1,52 @@
+<div class="back">
+  <a routerLink="" routerLinkActive="active" class="back-button"><i class="fa-solid fa-left-long"></i></a>
+  <div class="container">
+    <form [formGroup]="megasenaForm">
+      <h2>Sorteador Megasena</h2>
+
+      <div class="quantity-box">
+        <p>Quantidade de números</p>
+        <div class="number-quantity">
+          @for (_ of [].constructor(10); track $index) {
+            <div>
+              <input type="radio" name="numbersQuantity" [id]="$index + 6" [value]="$index + 6" formControlName="numbersQuantity">
+              <label [for]="$index + 6"> {{$index + 6}}</label>
+            </div>
+          }
+        </div>
+      </div>
+
+      <label class="exclude-label"><input type="checkbox" name="exclude" id="exclude" (change)="exclude = !exclude"> Excluir números?</label>
+
+      @if (exclude) {
+        <div class="excluded-box">
+          <span>Insira os números separados por vírgula ou espaço</span>
+          <input type="text" name="excludedNumbers" formControlName="excludedNumbers">
+        </div>
+      }
+
+      <div class="draw-box">
+        <input type="number" formControlName="drawQuantity">
+        <p>Quantidade de repetições(max.20)</p>
+      </div>
+
+      <button class="draw-button" (click)="start()">SORTEAR</button>
+    </form>
+
+  </div>
+  @if(showResults){
+    <div class="results-container">
+      @for (array of results; track $index) {
+        <div class="result">
+          @for (number of array; track $index) {
+            <p [style.width]="megasenaForm.value.numbersQuantity != null && megasenaForm.value.numbersQuantity != undefined ? 100 / megasenaForm.value.numbersQuantity + '%' : null">{{ number }}</p>
+          }
+        </div>
+      }
+
+
+      <button (click)="copy()" class="copyBtn">Copiar resultados <i class="fa-solid fa-copy"></i></button>
+    </div>
+  }
+
+</div>

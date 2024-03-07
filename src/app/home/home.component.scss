@@ -1,0 +1,83 @@
+.back{
+  background: rgb(245,245,245);
+  background: linear-gradient(135deg, rgba(245,245,245,1) 30%, rgba(212,210,210,1) 50%, rgba(244,244,244,1) 70%);
+  background-size: 600% 600%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  h1{
+    text-align: center;
+  }
+}
+
+.lottery-option{
+  width: 80%;
+  font-size: 1.5em;
+  text-align: center;
+  text-decoration: none;
+  padding: .25em 0;
+  color: white;
+  font-weight: 700;
+
+  i{
+    font-size: 1.2em;
+  }
+}
+
+.megasena{
+  background-color: var(--megasena-primary-color);
+
+  i{
+    color: var(--megasena-secondary-color);
+  }
+}
+
+.lotofacil{
+  background-color: var(--lotofacil-primary-color);
+
+  i{
+    color: var(--lotofacil-secondary-color);
+  }
+}
+
+.quina{
+  background-color: var(--quina-primary-color);
+
+  i{
+    color: var(--quina-secondary-color);
+  }
+}
+
+.milionaria{
+  background-color: var(--milionaria-primary-color);
+
+  i{
+    color: var(--milionaria-secondary-color);
+  }
+}
+
+.duplasena{
+  background-color: var(--duplasena-primary-color);
+
+  i{
+    color: var(--duplasena-secondary-color);
+  }
+}
+
+.lotomania{
+  background-color: var(--lotomania-primary-color);
+
+  i{
+    color: var(--lotomania-secondary-color);
+  }
+}
+
+.diaDeSorte{
+  background-color: var(--diaDeSorte-primary-color);
+
+  i{
+    color: var(--diaDeSorte-secondary-color);
+  }
+}
